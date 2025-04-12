@@ -105,14 +105,16 @@ sudo sysctl --system
 sysctl net.ipv4.ip_forward
 ```
 
-- Create file `kubeadm-config.yaml`. ad passt:
+- Create file `kubeadm-config.yaml`. and passt:
 
 ```yaml
 kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta4
 networking:
-  podSubnet: 10.1.0.0/16 # The subnet for kubernets range to use
-controlPlaneEndpoint: ha-control-plane # Needed to allow hight-availability on the master node
+  # The subnet for kubernets range to use
+  podSubnet: 10.1.0.0/16 
+# Needed to allow hight-availability on the master node
+controlPlaneEndpoint: ha-control-plane 
 kubernetesVersion: v1.32.0
 ---
 kind: KubeletConfiguration
@@ -121,5 +123,27 @@ cgroupDriver: systemd
 ```
 
 ```bash
+sudo kubeadm init 
+# OR
 sudo kubeadm init --config kubeadm-config.yaml
+```
+
+- If ssuccessfull run:
+
+```bash
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+- Check the nodes:
+
+```bash
+kubectl get nodes
+```
+
+- View the kubectl config
+
+```bash
+kubectl config view
 ```
