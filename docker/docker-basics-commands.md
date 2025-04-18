@@ -109,3 +109,36 @@
     ```bash
     docker container logs -f mynginx
     ```
+
+- To create new network
+
+    ```bash
+    docker network create mynet
+    ```
+
+- To list all networks
+
+    ```bash
+    docker network ls
+    ```
+
+- To assign network to container, use `--net <net-name>`
+
+    ```bash
+    docker run -it --name busybox-a --net mynet busybox sh
+    docker run -it --name busybox-b --net mynet busybox sh
+    ```
+
+    inside the running shell
+
+    From busybox-a
+
+    ```sh
+    ping busybox-b
+    ```
+
+    From busybox-b
+
+    ```sh
+    ping busybox-a
+    ```
