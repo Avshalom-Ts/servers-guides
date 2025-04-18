@@ -67,3 +67,9 @@
     ```bash
     docker run --name mynginx -v ./www:/usr/share/nginx/html:ro -d -p 8080:80 nginx
     ```
+
+- Interacting with running container buy adding `exec` command to docker command, to interct with container shell
+
+    ```bash
+    docker container exec -it <container-name/container-id> <interac-shell>
+    ```
