@@ -35,3 +35,11 @@
     ```bash
     docker run -it ubuntu bash
     ```
+
+- To expose port of the running container like `nginx` in dethach mode `d`, `-p <local-port>:<container-port>` to map the container port to the local port
+
+    ```bash
+    docker run --name mynginx -d -p 8080:80 nginx
+    ```
+
+    Check if the maped works by going to `http://<server-address>:<local-port>`
