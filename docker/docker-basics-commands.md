@@ -73,3 +73,15 @@
     ```bash
     docker container exec -it <container-name/container-id> <interac-shell>
     ```
+
+- To check for `ENV` environments inside running container
+
+    ```bash
+    docker exec <container-name/id> env
+    ```
+
+- To set env varible on cotainer
+
+    ```bash
+    docker run -it -d --name mybusybox -e var1='var1' -e var2='var2' busybox
+    ```
