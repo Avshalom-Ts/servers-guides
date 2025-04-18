@@ -39,3 +39,15 @@
     ```bash
     docker container ls
     ```
+
+5. Deploy new elastic container
+
+    ```bash
+    docker run --net todo-net --name todo-elastic -d -p 9200:9200 -p 9300:9300 -e "discovery.type=singlenode" elasticsearch:6.6.1
+    ```
+
+    Check if container is running
+
+    ```bash
+    docker container ls
+    ```
