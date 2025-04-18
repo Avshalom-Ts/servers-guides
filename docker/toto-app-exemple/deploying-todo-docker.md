@@ -51,3 +51,9 @@
     ```bash
     docker container ls
     ```
+
+    **Check the network config of todo-net to see all atached containers**
+
+    ```bash
+    docker network inspect todo-net
+    ```
