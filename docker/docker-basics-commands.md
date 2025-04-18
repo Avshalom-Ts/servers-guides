@@ -24,6 +24,12 @@
     docker container ls -a
     ```
 
+- To list only the ids of running containers
+
+    ```bash
+    docker container ls -q
+    ```
+
 - To give container name instead of the random name
 
     ```bash
@@ -46,6 +52,18 @@
 
     ```bash
     docker stop <container-name/container-id>
+    ```
+
+- To Stop all runnig container
+
+    ```bash
+    docker stop $(docker container ls -q)
+    ```
+
+- To delete all stoped containers
+
+    ```bash
+    docker remove $(docker container ls -aq)
     ```
 
 - To delete stoped container
@@ -84,4 +102,10 @@
 
     ```bash
     docker run -it -d --name mybusybox -e var1='var1' -e var2='var2' busybox
+    ```
+
+- To tail the logs of running container to the console `-f` for container name/id
+
+    ```bash
+    docker container logs -f mynginx
     ```
