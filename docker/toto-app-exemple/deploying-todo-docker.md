@@ -4,6 +4,11 @@
 
 1. Clone the repo [todo-starter](https://github.com/Avshalom-Ts/todo-starter)
 
+    Architectures used in the project
+
+    - NodeJs version: 10.12.0
+    - NPM version: 6.4.1
+
 2. Create the network in docker
 
     ```bash
@@ -58,7 +63,7 @@
     docker network inspect todo-net
     ```
 
-6. Running the api
+6. Running the api with npm
 
     ```bash
     cd todo-starter/todo-api/
@@ -92,3 +97,6 @@
     ```bash
     curl --data "title=Get the kids from school" http://localhost:3000/api/v1/todos
     ```
+
+7. Running the frontend with npm
+
