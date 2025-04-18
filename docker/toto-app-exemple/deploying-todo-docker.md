@@ -16,10 +16,22 @@
     docker network ls
     ```
 
-    Deploy new postgresql container
+3. Deploy new postgresql container
 
     ```bash
     docker run --net todo-net --name todo-postgres -p 5432:5432 -e POSTGRES_USER=todo -e POSTGRES_PASSWORD=todo1234 -e POSTGRES_DB=todo -d postgres:11.2
+    ```
+
+    Check if container is running
+
+    ```bash
+    docker container ls
+    ```
+
+4. Deploy new redis container
+
+    ```bash
+    docker run --net todo-net --name todo-redis -p 6379:6379 -d redis:5.0.3
     ```
 
     Check if container is running
