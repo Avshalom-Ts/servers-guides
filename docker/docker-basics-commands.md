@@ -42,4 +42,28 @@
     docker run --name mynginx -d -p 8080:80 nginx
     ```
 
-    Check if the maped works by going to `http://<server-address>:<local-port>`
+- To stop a running container
+
+    ```bash
+    docker stop <container-name/container-id>
+    ```
+
+- To delete stoped container
+
+    ```bash
+    docker remove <container-name/container-id>
+    ```
+
+- To inspect the confiq of container
+
+    ```bash
+    docker inspect <container-name/container-id>
+    ```
+
+    Check if the maped works by going to `http://<server-address>:<local-port>/index.html`
+
+- To use volumse and map it to running container, use `-v <local-location-files:container-location-files>:ro`, `ro` is for read only
+
+    ```bash
+    docker run --name mynginx -v ./www:/usr/share/nginx/html:ro -d -p 8080:80 nginx
+    ```
