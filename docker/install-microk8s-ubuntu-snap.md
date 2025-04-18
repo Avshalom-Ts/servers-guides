@@ -40,3 +40,9 @@
     ```bash
     kubectl cluster-info
     ```
+
+    Access the Kubernetes dashboard
+
+    ```bash
+    microk8s dashboard-proxy
+    ```
