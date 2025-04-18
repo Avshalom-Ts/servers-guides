@@ -57,3 +57,38 @@
     ```bash
     docker network inspect todo-net
     ```
+
+6. Running the api
+
+    ```bash
+    cd todo-starter/todo-api/
+    npm install
+    npm start
+    ```
+
+    **Should print**
+
+    ```text
+    > todo-api@1.0.0 start
+    > node index.js
+
+    Todo API Server started!
+    Redis client connected
+    Postgres client connected
+    Elasticsearch client connected
+    Created a new Elastic index: todos { acknowledged: true, shards_acknowledged: true, index: 'todos' }
+    ```
+
+    Test the api from secont console
+
+    ```bash
+    curl http://localhost:3000/api/v1/todos
+    ```
+
+    Or in the web browser `http://<server-address>:3000/api/v1/todos`
+
+    Put data in redis to get resolt in previes command
+
+    ```bash
+    curl --data "title=Get the kids from school" http://localhost:3000/api/v1/todos
+    ```
